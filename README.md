@@ -2,15 +2,16 @@
 
 # 🦆 Ducker
 
-Small docker image with [DuckDB](https://duckdb.org/) and [PRQL](https://www.prql-lang.org/) included!
+Small docker image with [DuckDB](https://github.com/duckdb/duckdb) and [PRQL](https://github.com/PRQL/prql) included!
 
-Other extensions included and loaded are:
-  * httpfs
-  * json
-  * parquet
-  * postgres_scanner
-  * sqlite_scanner
-  * substrait
+The extensions included and loaded are:
+  * [prql](https://github.com/ywelsch/duckdb-prql)
+  * [httpfs](https://duckdb.org/docs/extensions/httpfs.html)
+  * [json](https://duckdb.org/docs/extensions/json)
+  * [parquet](https://duckdb.org/docs/data/parquet)
+  * [postgres_scanner](https://duckdb.org/docs/extensions/postgres_scanner)
+  * [sqlite_scanner](https://duckdb.org/docs/extensions/sqlite_scanner)
+  * [substrait](https://duckdb.org/docs/extensions/substrait)
 
 ## Quickstart
 
