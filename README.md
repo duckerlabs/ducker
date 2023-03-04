@@ -1,6 +1,6 @@
-# 🦆 Ducker
-
 [![ducker: [noun] a person or thing that ducks](ducker_definition.png)](https://www.dictionary.com/browse/ducker)
+
+# 🦆 Ducker
 
 Small docker image with DuckDB included!
 
