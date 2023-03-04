@@ -1,4 +1,6 @@
-# 🦆 DuckDB Docker Image
+# 🦆 Ducker
+
+[![ducker: [noun] a person or thing that ducks](ducker_definition.png)](https://www.dictionary.com/browse/ducker)
 
 Small docker image with DuckDB included!
 
