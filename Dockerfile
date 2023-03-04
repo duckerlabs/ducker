@@ -31,6 +31,6 @@ ENV LOAD_EXTENSIONS=$LOAD_EXTENSIONS
 
 RUN for e in $EXTENSIONS; do echo "Installing $e ..."; duckdb -c "INSTALL $e;"; done
 
-#ENTRYPOINT ["/usr/local/bin/duckdb", "-unsigned", "-cmd", "LOAD prql; $LOAD_EXTENSIONS"]
-ENTRYPOINT /usr/local/bin/duckdb -unsigned -cmd "LOAD prql; $LOAD_EXTENSIONS"
+#ENTRYPOINT /usr/local/bin/duckdb -unsigned -cmd "LOAD prql; $LOAD_EXTENSIONS"
+ENTRYPOINT ["/usr/local/bin/duckdb", "-unsigned", "-cmd", "LOAD prql; LOAD httpfs; LOAD json; LOAD parquet; LOAD postgres_scanner; LOAD sqlite_scanner; LOAD substrait;"]
 CMD []

@@ -4,6 +4,14 @@
 
 Small docker image with [DuckDB](https://duckdb.org/) and [PRQL](https://www.prql-lang.org/) included!
 
+Other extensions included and loaded are:
+  * httpfs
+  * json
+  * parquet
+  * postgres_scanner
+  * sqlite_scanner
+  * substrait
+
 ## Quickstart
 
 ```bash
