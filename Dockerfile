@@ -1,8 +1,9 @@
 FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -y \
-    wget \
+    gettext-base \
     unzip \
+    wget \
     && rm -rf /var/lib/apt/lists/*
 
 # Install DuckDB
@@ -19,6 +20,7 @@ RUN wget https://github.com/duckdb/duckdb/releases/download/${DUCKDB_VERSION}/du
 # -----------------------
 
 RUN echo ".prompt '⚫◗ '" > $HOME/.duckdbrc
+#RUN echo ".prompt '<ESC>[33m⚫◗<ESC>[37m '" > $HOME/.duckdbrc
 
 # Install Extensions
 # ------------------
@@ -40,5 +42,9 @@ ARG PRQL_VERSION
 RUN duckdb -unsigned -c "SET custom_extension_repository='welsch.lu/duckdb/prql/$PRQL_VERSION'; INSTALL prql;" \
     && echo "LOAD prql;" >> $HOME/.duckdbrc
 
-ENTRYPOINT ["/usr/local/bin/duckdb", "-unsigned"]
+# Add ducker.sh entrypoint
+COPY ducker.sh /usr/local/bin/ducker
+
+ENTRYPOINT ["/usr/local/bin/ducker", "-unsigned"]
+#ENTRYPOINT ["/usr/local/bin/duckdb", "-unsigned"]
 CMD []

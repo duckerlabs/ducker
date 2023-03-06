@@ -4,7 +4,6 @@
 
 Small docker image with [DuckDB](https://github.com/duckdb/duckdb) and extensions pre-installed!
 
-
 The extensions included and loaded are:
   * [fts](https://duckdb.org/docs/extensions/full_text_search)
   * [httpfs](https://duckdb.org/docs/extensions/httpfs.html)
@@ -32,6 +31,26 @@ echo "SELECT 42" | ducker
 or get the first 5 lines of a csv file named "albums.csv", with the following PRQL query:
 ```sh
 ducker -c 'from `albums.csv` | take 5;'
+```
+
+## Config
+
+If there is a `.env` file in the directory that you are calling `ducker` from, then that will be read in
+and added to the environment inside the container.
+
+Furthermore, if there is a `.duckdbrc` file in the current directory, then it will be executed at startup
+after have any environment variable references substituted using the `envsubst` utility.
+
+This means that for working with files on S3, having a `.duckdbrc` file like the following in your current
+directory allows you to specify your S3 credentials via environment variables or a `.env` file.
+
+```sql
+set s3_endpoint='${S3_ENDPOINT}';
+set s3_access_key_id='${S3_ACCESS_KEY_ID}';
+set s3_secret_access_key='${S3_SECRET_ACCESS_KEY}';
+set s3_use_ssl=${S3_USE_SSL};
+set s3_region='${S3_REGION}';
+set s3_url_style='${S3_URL_STYLE}';
 ```
 
 ## Examples
