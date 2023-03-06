@@ -93,28 +93,27 @@ derive name = f"{c.last_name}, {c.first_name}"
 select [
   c.customer_id, name, sum_income
 ]
-derive db_version = s"version()";
 ```
 
 which returns:
 ```
-┌─────────────┬─────────────────────┬────────────┬────────────┐
-│ customer_id │        name         │ sum_income │ db_version │
-│    int64    │       varchar       │   double   │  varchar   │
-├─────────────┼─────────────────────┼────────────┼────────────┤
-│           6 │ Holý, Helena        │      43.83 │ v0.7.1     │
-│           7 │ Gruber, Astrid      │      36.83 │ v0.7.1     │
-│          24 │ Ralston, Frank      │      37.83 │ v0.7.1     │
-│          25 │ Stevens, Victor     │      36.83 │ v0.7.1     │
-│          26 │ Cunningham, Richard │      41.83 │ v0.7.1     │
-│          28 │ Barnett, Julia      │      37.83 │ v0.7.1     │
-│          37 │ Zimmermann, Fynn    │      37.83 │ v0.7.1     │
-│          45 │ Kovács, Ladislav    │      39.83 │ v0.7.1     │
-│          46 │ O'Reilly, Hugh      │      39.83 │ v0.7.1     │
-│          57 │ Rojas, Luis         │      40.83 │ v0.7.1     │
-├─────────────┴─────────────────────┴────────────┴────────────┤
-│ 10 rows                                           4 columns │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────┬─────────────────────┬────────────┐
+│ customer_id │        name         │ sum_income │
+│    int64    │       varchar       │   double   │
+├─────────────┼─────────────────────┼────────────┤
+│           6 │ Holý, Helena        │      43.83 │
+│           7 │ Gruber, Astrid      │      36.83 │
+│          24 │ Ralston, Frank      │      37.83 │
+│          25 │ Stevens, Victor     │      36.83 │
+│          26 │ Cunningham, Richard │      41.83 │
+│          28 │ Barnett, Julia      │      37.83 │
+│          37 │ Zimmermann, Fynn    │      37.83 │
+│          45 │ Kovács, Ladislav    │      39.83 │
+│          46 │ O'Reilly, Hugh      │      39.83 │
+│          57 │ Rojas, Luis         │      40.83 │
+├─────────────┴─────────────────────┴────────────┤
+│ 10 rows                              3 columns │
+└────────────────────────────────────────────────┘
 ```
 
 ## Acknowledgements
