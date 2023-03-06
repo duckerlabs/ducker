@@ -6,7 +6,9 @@ Small docker image with [DuckDB](https://github.com/duckdb/duckdb) and extension
 
 
 The extensions included and loaded are:
+  * [fts](https://duckdb.org/docs/extensions/full_text_search)
   * [httpfs](https://duckdb.org/docs/extensions/httpfs.html)
+  * [icu](https://duckdb.org/2022/01/06/time-zones.html)
   * [json](https://duckdb.org/docs/extensions/json)
   * [parquet](https://duckdb.org/docs/data/parquet)
   * [postgres_scanner](https://duckdb.org/docs/extensions/postgres_scanner)

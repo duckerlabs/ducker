@@ -2,5 +2,6 @@
 
 [✓] Handle case of non-tty invocation
 [✓] Write startup LOAD commands to ~/.duckdbrc
-[ ] Handle s3 better
 [ ] Make loading of extensions optional
+[ ] Handle s3 better
+[ ] Add minio based s3 test harness
