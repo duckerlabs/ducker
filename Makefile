@@ -3,7 +3,6 @@
 DUCKDB_VERSION=v0.7.1
 PRQL_VERSION=latest
 EXTENSIONS="httpfs json parquet postgres_scanner sqlite_scanner substrait"
-LOAD_EXTENSIONS="LOAD httpfs; LOAD json; LOAD parquet; LOAD postgres_scanner; LOAD sqlite_scanner; LOAD substrait;"
 IMAGE_NAME := duckerlabs/ducker:$(DUCKDB_VERSION)
 LATEST_IMAGE_NAME := duckerlabs/ducker:latest
 
