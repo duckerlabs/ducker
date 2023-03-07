@@ -42,7 +42,7 @@ Furthermore, if there is a `.duckdbrc` file in the current directory, then it wi
 after have any environment variable references substituted using the `envsubst` utility.
 
 This means that for working with files on S3, having a `.duckdbrc` file like the following in your current
-directory allows you to specify your S3 credentials via environment variables or a `.env` file.
+directory allows you to specify your S3 credentials via a `.env` file.
 
 ```sql
 set s3_endpoint='${S3_ENDPOINT}';
